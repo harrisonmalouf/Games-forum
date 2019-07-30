@@ -1,0 +1,20 @@
+<%= form_for @game do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+
+  <%= f.label :company %>
+  <%= f.text_field :company, :placeholder => 'ID Software' %>
+
+  <%= f.label :dob, "Date of release" %>
+  <%= f.text_field :release_date, :placeholder => 'YYYY-MM-DD', :required => true %>
+
+  <%= f.label :platform %>
+  <%= f.text_field :platform, :placeholder => 'PC', :required => true %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image, :placeholder => 'http/...'%>
+
+  <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h1>Hello</h1>
+
+
+<% @games.each do |game| %>
+  <%= image_tag game.image, :class => 'thumb' if game.image.present? %>
+  <ul>
+    <li>Name: <%= link_to game.name, game %></li>
+    <li>Company: <%= game.company %></li>
+    <% if game.release_date.present? %>
+      <li>Date of release: <%= game.release_date.strftime '%A, %B %e, %Y' %></li>
+    <% end %>
+    <li>Platform: <%= game.platform %></li>
+  </ul>
+<% end %>

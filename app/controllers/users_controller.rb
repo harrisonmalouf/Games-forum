@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
+     @user = User.new 
   end
 
-  def create
+  def create #this is the input
     @user = User.new user_params #setting up the users
     if @user.save #if .save returns true its a valid user.
       session[:user_id] = @user.id # Login when you've signed up
@@ -16,6 +16,6 @@ class UsersController < ApplicationController
 
   private
   def user_name
-    params.require(:user).permit(:email, :password, :password_confirmation) #this is stating the params that are permitted to be inputted to by the user on the users signup
+    params.require(:user).permit(:email, :password, :password_confirmation) #in plain english its asking that he user requires a email, password and password information. This protectus us from any sql injections that could give administrative autherisation.
   end
 end
