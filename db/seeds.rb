@@ -1,7 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Game.destroy_all
+
+puts "creating games"
+Game.create(:name => 'Doom Eternal', :release_date => '2019-11-22', :company => 'ID Software', :platform => 'Nintendo Switch, PlayStation 4, Microsoft Windows, Xbox One', :image => 'https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Doom_image1600w.jpg')
+Game.creat(:name => 'Dark Souls', :release_date => '2011-9-22', :company => 'From Software', :platform)

@@ -1,3 +1,15 @@
-<h1>Show coming soons</h1>
+<h1><%= @game.name %></h1>
 
-<% raise %>
+<%= cl_image_tag @game.image, :class => 'feature' if @game.image.present? %>
+<ul>
+  <li>Company: <%= @game.company %></li>
+  <% if @game.release_date.present? %>
+    <li>Date of release: <%= @game.release_date.strftime '%A, %B %e, %Y' %></li>
+  <% end %>
+  <li>Platform: <%= @game.platform %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit game", edit_game_path(@game) %>
+  <%= link_to "Delete game", @game, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

@@ -1,8 +1,8 @@
-<h1>Hello</h1>
+<h1>Games</h1>
 
 
 <% @games.each do |game| %>
-  <%= image_tag game.image, :class => 'thumb' if game.image.present? %>
+  <%= cl_image_tag game.image, :class => 'thumb' if game.image.present? %>
   <ul>
     <li>Name: <%= link_to game.name, game %></li>
     <li>Company: <%= game.company %></li>
