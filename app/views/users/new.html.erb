@@ -1,1 +1,28 @@
-<h1>sign up</h1>
+<h1>New User</h1>
+
+<% if @user.errors.any? %>
+  <ol>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+<p>
+  <%= f.label :email, :class => "badge badge-secondary" %>
+  <%= f.email_field :email, :required => true %>
+</p>
+<p>
+  <%= f.label :password, :class => "badge badge-secondary" %>
+  <%= f.password_field :password, :required => true %>
+</p>
+<p>
+  <%= f.label :password_confirmation, :class => "badge badge-secondary" %>
+  <%= f.password_field :password_confirmation, :required => true %>
+</p>
+
+<p>
+<%= f.submit "Sign Up", :class => "border border-success rounded-pill btn btn-dark" %>
+</p>
+<% end %>

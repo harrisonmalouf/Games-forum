@@ -1,0 +1,26 @@
+<%= form_for @post do |f| %>
+  <p>
+  <%= f.label :title, :class => "badge badge-secondary" %>
+  <%= f.text_field :title, :required => true, :class => "form-control" %>
+  </p>
+
+  <p>
+  <%= f.label :image, :class => "badge badge-secondary" %>
+  <%= f.url_field :image, :class => "form-control" %>
+  </p>
+
+
+    <%= f.label :text, :class => "badge badge-secondary" %>
+    <%= f.text_field :text, :class => "form-control" %>
+
+<p class="gamelabel">
+<%= f.label :game, :class => "badge badge-secondary" %>
+<%= f.select :game, Game.pluck(:name, :id), :include_blank => true %>
+</p>
+
+<%#  <%= f.label :video %>
+<%#   <%= f.url_field :video %>
+
+    <%= f.submit "Submit", :class => "border border-success rounded-pill btn btn-dark" %>
+
+<% end %>
