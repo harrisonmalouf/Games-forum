@@ -5,13 +5,15 @@
 </p>
 
 <%= form_tag login_path do %>
-
-  <%= label_tag :email %>
+<p>
+  <%= label_tag :email,'email' , :class => "badge badge-secondary" %>
   <%= email_field_tag :email %>
+</p>
 
-  <%= label_tag :password %>
+<p>
+  <%= label_tag :password,'email' , :class => "badge badge-secondary" %>
   <%= password_field_tag :password %>
-
-  <%= submit_tag "Sign in" %>
+</p>
+  <%= submit_tag "Sign in", :class => "border border-success rounded-pill btn btn-dark" %>
 
 <% end %>
